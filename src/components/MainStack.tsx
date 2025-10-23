@@ -25,7 +25,11 @@ export const MainStack = () => (
     >
       <StackNavigator.Screen name="One" component={ScreenOne} />
       <StackNavigator.Screen name="Two" component={ScreenTwo} />
-      <StackNavigator.Screen name="N8n" component={N8nScreen} options={{ title: "n8n Integration" }} />
+      <StackNavigator.Screen
+        name="N8n"
+        component={N8nScreen}
+        options={{ title: "n8n Integration" }}
+      />
     </StackNavigator.Navigator>
   </BaseNavigationContainer>
 );

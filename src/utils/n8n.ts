@@ -30,7 +30,7 @@ export interface N8nResponse {
  */
 export async function triggerN8nWebhook(
   webhookPath: string,
-  payload: N8nWebhookPayload,
+  payload: N8nWebhookPayload
 ): Promise<N8nResponse> {
   try {
     // Determine if webhookPath is a full URL or just a path
