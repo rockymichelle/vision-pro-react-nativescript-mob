@@ -18,6 +18,18 @@ A React NativeScript application demonstrating navigation and UI patterns optimi
 npm install
 ```
 
+## 🐳 Docker
+
+Build and run the application using Docker:
+
+```bash
+# Build the Docker image
+docker build -t vision-pro-react-nativescript .
+
+# Run the container
+docker run vision-pro-react-nativescript
+```
+
 ## 🛠️ Development Scripts
 
 - `npm run lint` - Run ESLint to check code quality
@@ -65,6 +77,8 @@ This project uses:
 - `.eslintrc.json` - ESLint rules and settings
 - `.prettierrc.json` - Prettier formatting rules
 - `tailwind.config.js` - Tailwind CSS configuration
+- `Dockerfile` - Docker container configuration
+- `.dockerignore` - Files to exclude from Docker builds
 
 ## 📄 License
 

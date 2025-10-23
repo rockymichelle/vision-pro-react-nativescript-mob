@@ -1,0 +1,42 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# NativeScript
+hooks/
+platforms/
+
+# Logs
+logs
+*.log
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+.idea
+.cloud
+.project
+tmp/
+typings/
+
+# Git
+.git
+.gitignore
+
+# CI/CD
+.github
+
+# IDE
+.vscode
+
+# Documentation
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# Docker
+Dockerfile
+.dockerignore
