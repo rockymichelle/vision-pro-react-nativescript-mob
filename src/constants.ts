@@ -17,3 +17,12 @@ export const MESSAGES = {
   ALERT_TAPPED: "Tapped!",
   DEFAULT_MESSAGE: "Hello, world!",
 } as const;
+
+/**
+ * WebContainer-related constants
+ */
+export const WEBCONTAINER = {
+  ENABLED: process.env.WEBCONTAINER === "1",
+  NODE_VERSION: "18",
+  ENVIRONMENT: process.env.NODE_ENV || "development",
+} as const;

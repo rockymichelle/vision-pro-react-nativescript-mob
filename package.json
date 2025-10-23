@@ -8,7 +8,10 @@
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json}\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "webcontainer:start": "WEBCONTAINER=1 setup-nativescript-stackblitz && ns preview",
+    "webcontainer:dev": "WEBCONTAINER=1 ns preview",
+    "webcontainer:build": "WEBCONTAINER=1 ns build"
   },
   "dependencies": {
     "react": "^18.2.0",
