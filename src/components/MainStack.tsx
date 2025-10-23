@@ -5,6 +5,7 @@ import { stackNavigatorFactory } from "react-nativescript-navigation";
 import { THEME } from "../constants";
 import { ScreenOne } from "./ScreenOne";
 import { ScreenTwo } from "./ScreenTwo";
+import { VRScreen } from "./VRScreen";
 
 const StackNavigator = stackNavigatorFactory();
 
@@ -24,6 +25,11 @@ export const MainStack = () => (
     >
       <StackNavigator.Screen name="One" component={ScreenOne} />
       <StackNavigator.Screen name="Two" component={ScreenTwo} />
+      <StackNavigator.Screen
+        name="VRExperience"
+        component={VRScreen}
+        options={{ title: "VR Experience" }}
+      />
     </StackNavigator.Navigator>
   </BaseNavigationContainer>
 );
