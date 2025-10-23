@@ -3,7 +3,6 @@ import * as React from "react";
 import { stackNavigatorFactory } from "react-nativescript-navigation";
 
 import { THEME } from "../constants";
-import { N8nScreen } from "./N8nScreen";
 import { ScreenOne } from "./ScreenOne";
 import { ScreenTwo } from "./ScreenTwo";
 
@@ -25,11 +24,6 @@ export const MainStack = () => (
     >
       <StackNavigator.Screen name="One" component={ScreenOne} />
       <StackNavigator.Screen name="Two" component={ScreenTwo} />
-      <StackNavigator.Screen
-        name="N8n"
-        component={N8nScreen}
-        options={{ title: "n8n Integration" }}
-      />
     </StackNavigator.Navigator>
   </BaseNavigationContainer>
 );

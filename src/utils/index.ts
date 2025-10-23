@@ -3,4 +3,3 @@
  */
 
 export * from "./environment";
-export * from "./n8n";

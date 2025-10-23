@@ -7,5 +7,4 @@ export type MainStackParamList = {
   Two: {
     message: string;
   };
-  N8n: undefined;
 };
