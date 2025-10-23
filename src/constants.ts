@@ -17,27 +17,3 @@ export const MESSAGES = {
   ALERT_TAPPED: "Tapped!",
   DEFAULT_MESSAGE: "Hello, world!",
 } as const;
-
-/**
- * VR-specific configuration constants
- */
-export const VR_CONFIG = {
-  APPLE_VISION_PRO: {
-    DISPLAY_NAME: "Apple Vision Pro",
-    IMMERSIVE_MODE_ENABLED: true,
-    SPATIAL_AUDIO_ENABLED: true,
-  },
-  ANDROID_VR: {
-    DISPLAY_NAME: "Android VR",
-    IMMERSIVE_MODE_ENABLED: true,
-    SPATIAL_AUDIO_ENABLED: true,
-  },
-} as const;
-
-export const VR_MESSAGES = {
-  VR_ENABLED: "VR Mode Enabled",
-  VR_DISABLED: "VR Mode Not Available",
-  ENTER_VR: "Enter VR Experience",
-  EXIT_VR: "Exit VR Experience",
-  VR_PLATFORM_DETECTED: "VR Platform Detected:",
-} as const;
