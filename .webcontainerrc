@@ -1,0 +1,24 @@
+{
+  "name": "vision-pro-react-nativescript-mob",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "setup-nativescript-stackblitz && ns preview",
+    "dev": "ns preview",
+    "build": "ns build",
+    "prepare": "npm install"
+  },
+  "features": {
+    "nodeVersion": "18",
+    "npmVersion": "9",
+    "supportedShells": ["bash", "sh"],
+    "fileSystem": {
+      "allowWrites": true,
+      "syncOnSave": true
+    }
+  },
+  "performance": {
+    "cacheEnabled": true,
+    "lazyLoadModules": true,
+    "optimizeMemory": true
+  }
+}
