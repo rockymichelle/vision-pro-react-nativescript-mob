@@ -24,17 +24,13 @@ export function ScreenOne({ navigation }: ScreenOneProps) {
     navigation.navigate("Two", { message: MESSAGES.DEFAULT_MESSAGE });
   };
 
-  const handleNavigateToN8n = () => {
-    navigation.navigate("N8n");
-  };
-
   const handleShowEnvironment = () => {
     const envInfo = `Environment: ${ENV_CONFIG.environmentType}\nWebContainer: ${ENV_CONFIG.isWebContainer}\nStackBlitz: ${ENV_CONFIG.isStackBlitz}`;
     Dialogs.alert(envInfo);
   };
 
   return (
-    <gridLayout rows="*,auto,auto,auto,auto,*,auto,100">
+    <gridLayout rows="*,auto,auto,auto,*,auto,100">
       <label row="1" className="fas text-3xl text-center leading-8" height="40">
         &#xf135; You're viewing screen one!
       </label>
@@ -50,15 +46,7 @@ export function ScreenOne({ navigation }: ScreenOneProps) {
         Show Environment Info
       </button>
       <button
-        row="4"
-        className={BUTTON_STYLES.SECONDARY}
-        width={BUTTON_WIDTH}
-        onTap={handleNavigateToN8n}
-      >
-        n8n Integration
-      </button>
-      <button
-        row="6"
+        row="5"
         className={BUTTON_STYLES.SECONDARY}
         width={BUTTON_WIDTH}
         onTap={handleNavigateToTwo}
