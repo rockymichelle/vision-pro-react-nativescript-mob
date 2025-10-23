@@ -23,8 +23,12 @@ export function ScreenOne({ navigation }: ScreenOneProps) {
     navigation.navigate("Two", { message: MESSAGES.DEFAULT_MESSAGE });
   };
 
+  const handleNavigateToVR = () => {
+    navigation.navigate("VRExperience");
+  };
+
   return (
-    <gridLayout rows="*,auto,auto,*,auto,100">
+    <gridLayout rows="*,auto,auto,auto,*,auto,100">
       <label row="1" className="fas text-3xl text-center leading-8" height="40">
         &#xf135; You're viewing screen one!
       </label>
@@ -37,7 +41,15 @@ export function ScreenOne({ navigation }: ScreenOneProps) {
         Tap me for an alert
       </button>
       <button
-        row="4"
+        row="3"
+        className={BUTTON_STYLES.SECONDARY}
+        width={BUTTON_WIDTH}
+        onTap={handleNavigateToVR}
+      >
+        Open VR Experience
+      </button>
+      <button
+        row="5"
         className={BUTTON_STYLES.SECONDARY}
         width={BUTTON_WIDTH}
         onTap={handleNavigateToTwo}

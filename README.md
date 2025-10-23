@@ -10,6 +10,9 @@ A React NativeScript application demonstrating navigation and UI patterns optimi
 - Type-safe navigation with TypeScript
 - Tailwind CSS styling
 - Screen navigation with parameter passing
+- **VR Integration** for Apple Vision Pro and Android VR
+- Platform detection for VR capabilities
+- Immersive VR experience screen
 - Clean, maintainable code structure
 
 ## 📦 Installation
@@ -36,7 +39,10 @@ src/
 ├── components/
 │   ├── MainStack.tsx   # Main navigation stack
 │   ├── ScreenOne.tsx   # First screen component
-│   └── ScreenTwo.tsx   # Second screen component
+│   ├── ScreenTwo.tsx   # Second screen component
+│   └── VRScreen.tsx    # VR experience screen
+├── utils/
+│   └── vrDetection.ts  # VR platform detection utilities
 └── fonts/              # Custom fonts
 ```
 
@@ -53,11 +59,47 @@ This project uses:
 ### Screen One
 - Displays a welcome message
 - Alert button demonstration
+- Navigation to VR Experience screen
 - Navigation to Screen Two
 
 ### Screen Two
 - Displays passed message parameter
 - Back navigation functionality
+
+### VR Experience Screen
+- **Apple Vision Pro Support**: Detects and enables visionOS capabilities
+- **Android VR Support**: Detects and enables Android VR features
+- Platform detection and display
+- Toggle immersive VR mode
+- Spatial audio and immersive space configuration
+- Back navigation functionality
+
+## 🥽 VR Integration
+
+This application includes comprehensive VR support for both Apple and Android platforms:
+
+### Apple Vision Pro (visionOS)
+- Automatic detection of Apple Vision Pro devices
+- Immersive space support for spatial computing
+- Spatial audio configuration
+- visionOS-specific UI optimizations
+
+### Android VR
+- Support for Android VR platforms (ARCore, Daydream)
+- VR headtracking and mode capabilities
+- Hardware feature detection
+- VR service integration
+
+### VR Detection Utilities
+The app includes utilities in `src/utils/vrDetection.ts` for:
+- Automatic platform detection (`detectVRPlatform()`)
+- VR support checking (`isVRSupported()`)
+- Platform-specific checks (`isAppleVisionPro()`, `isAndroidVR()`)
+
+### VR Configuration
+VR capabilities are configured in `nativescript.config.ts`:
+- **Android**: VR mode and headtracking features
+- **iOS/visionOS**: Immersive spaces and spatial audio
 
 ## 🔧 Configuration Files
 
