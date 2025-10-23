@@ -26,12 +26,7 @@ export function ScreenTwo({ navigation, route }: ScreenTwoProps) {
       <label row="2" className="text-3xl text-center my-5">
         Message: {route.params.message}
       </label>
-      <button
-        row="4"
-        className={BUTTON_STYLES.SECONDARY}
-        width={BUTTON_WIDTH}
-        onTap={handleGoBack}
-      >
+      <button row="4" className={BUTTON_STYLES.SECONDARY} width={BUTTON_WIDTH} onTap={handleGoBack}>
         Go back
       </button>
     </gridLayout>

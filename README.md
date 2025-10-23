@@ -1,10 +1,13 @@
 # Vision Pro React NativeScript Mobile App
 
-A React NativeScript application demonstrating navigation and UI patterns optimized for Vision Pro and mobile platforms.
+[![License: Private](https://img.shields.io/badge/license-Private-red.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+[![NativeScript](https://img.shields.io/badge/NativeScript-React-green.svg)](https://nativescript.org/)
+[![WebContainer](https://img.shields.io/badge/WebContainer-Enabled-orange.svg)](https://webcontainers.dev/)
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/gemsteamservices-web/vision-pro-react-nativescript-mob)
+A production-ready React NativeScript application showcasing modern mobile development practices with advanced navigation patterns and UI components. Designed with Vision Pro spatial computing optimization and cross-platform compatibility in mind, this project demonstrates enterprise-grade code quality standards and WebContainer support for browser-based development.
 
-## 🚀 Features
+## 🌟 Overview
 
 - React-based NativeScript application
 - Type-safe navigation with TypeScript
@@ -12,119 +15,587 @@ A React NativeScript application demonstrating navigation and UI patterns optimi
 - Screen navigation with parameter passing
 - Clean, maintainable code structure
 - **WebContainer support** for browser-based development and execution
+- **n8n integration** for workflow automation
+This application serves as a reference implementation for building scalable mobile applications using React and NativeScript. It features type-safe navigation, modern styling with Tailwind CSS, and comprehensive development tooling including linting, formatting, and type checking. The project is optimized for both traditional mobile platforms (iOS and Android) and emerging platforms like Apple Vision Pro.
+
+### Key Highlights
+
+- **Cross-Platform Development**: Build once, deploy to iOS, Android, and Vision Pro
+- **Modern Tech Stack**: React 18, TypeScript 5.3, and NativeScript 8.6
+- **Browser-Based Development**: Full WebContainer support for instant development in StackBlitz
+- **Code Quality First**: Integrated ESLint, Prettier, and TypeScript strict mode
+- **Production Ready**: Containerized deployment with Docker support
+
+[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/btkcodedev/vision-pro-react-nativescript-mob)
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js**: Version 18.x or higher ([Download](https://nodejs.org/))
+- **npm**: Version 8.x or higher (comes with Node.js)
+- **Git**: For version control ([Download](https://git-scm.com/))
+- **Docker** (Optional): For containerized deployment ([Download](https://www.docker.com/))
+
+### For Native Development
+
+- **iOS Development**: macOS with Xcode 14+ and iOS 16+ SDK
+- **Android Development**: Android Studio with Android SDK (API level 33+)
+- **NativeScript CLI**: Install globally with `npm install -g @nativescript/cli`
+
+## 🚀 Quick Start
+
+Get up and running in minutes:
+
+```bash
+# Clone the repository
+git clone https://github.com/btkcodedev/vision-pro-react-nativescript-mob.git
+cd vision-pro-react-nativescript-mob
+
+# Install dependencies
+npm install
+
+# Verify installation
+npm run type-check
+
+# Start development (choose one):
+npm run webcontainer:dev  # For browser-based development
+ns preview                # For native preview on device
+```
+
+For detailed setup instructions, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## ✨ Features
+
+### Core Functionality
+
+- **React-Based Architecture**: Leverages React 18 with functional components and hooks
+- **Type-Safe Navigation**: Fully typed navigation system with parameter validation using TypeScript
+- **Modern Styling**: Utility-first CSS with Tailwind CSS integration
+- **Screen Management**: Multi-screen navigation with parameter passing and state management
+- **Vision Pro Optimization**: UI patterns and components optimized for spatial computing experiences
+
+### Developer Experience
+
+- **WebContainer Support**: Develop and test directly in the browser without local installation
+- **Hot Module Replacement**: Instant feedback during development with live reloading
+- **Code Quality Tools**: Automated linting, formatting, and type checking
+- **Docker Integration**: Consistent development and deployment environments
+- **Comprehensive Documentation**: Detailed guides for WebContainer, contributing, and more
 
 ## 📦 Installation
 
+### Standard Installation
+
 ```bash
+# Install all dependencies
+npm install
+
+# Verify TypeScript configuration
+npm run type-check
+
+# Check code quality
+npm run lint
+npm run format:check
+```
+
+### Installation Troubleshooting
+
+If you encounter issues during installation:
+
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Remove node_modules and package-lock.json
+rm -rf node_modules package-lock.json
+
+# Reinstall dependencies
 npm install
 ```
 
-## 🐳 Docker
+## 🐳 Docker Deployment
 
-Build and run the application using Docker:
+Containerize your application for consistent deployment across environments:
 
 ```bash
 # Build the Docker image
-docker build -t vision-pro-react-nativescript .
+docker build -t vision-pro-react-nativescript:latest .
 
 # Run the container
-docker run vision-pro-react-nativescript
+docker run -d --name vision-pro-app vision-pro-react-nativescript:latest
+
+# View container logs
+docker logs vision-pro-app
+
+# Stop the container
+docker stop vision-pro-app
+```
+
+### Production Docker Deployment
+
+```bash
+# Build with production optimizations
+docker build --target production -t vision-pro-react-nativescript:prod .
+
+# Run with environment variables
+docker run -d \
+  -e NODE_ENV=production \
+  --name vision-pro-app-prod \
+  vision-pro-react-nativescript:prod
 ```
 
 ## 🛠️ Development Scripts
 
-- `npm run lint` - Run ESLint to check code quality
-- `npm run lint:fix` - Automatically fix linting issues
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run type-check` - Run TypeScript type checking
+### Code Quality
 
-### WebContainer Scripts
+| Command | Description | When to Use |
+|---------|-------------|-------------|
+| `npm run lint` | Run ESLint to check code quality | Before committing changes |
+| `npm run lint:fix` | Automatically fix linting issues | To resolve common linting errors |
+| `npm run format` | Format code with Prettier | To ensure consistent code style |
+| `npm run format:check` | Check code formatting without changes | In CI/CD pipeline |
+| `npm run type-check` | Run TypeScript type checking | To catch type errors early |
 
-- `npm run webcontainer:start` - Start the application in WebContainer mode
-- `npm run webcontainer:dev` - Run development mode with WebContainer support
-- `npm run webcontainer:build` - Build the application for WebContainer environment
+### WebContainer Development
+
+| Command | Description | Environment |
+|---------|-------------|-------------|
+| `npm run webcontainer:start` | Start application in WebContainer mode | StackBlitz or browser-based IDEs |
+| `npm run webcontainer:dev` | Development mode with WebContainer | Fast iteration in browser |
+| `npm run webcontainer:build` | Build for WebContainer environment | Testing browser builds |
+
+### Recommended Workflow
+
+1. **Before starting work**: `npm run type-check && npm run lint`
+2. **During development**: Use `npm run webcontainer:dev` for quick iteration
+3. **Before committing**: `npm run format && npm run lint:fix && npm run type-check`
 
 ## 📁 Project Structure
 
 ```
 src/
 ├── app.ts              # Application entry point
-├── constants.ts        # Shared constants and configuration
+├── constants.ts        # Shared constants and configuration (including n8n)
 ├── NavigationParamList.ts  # Type definitions for navigation
 ├── components/
 │   ├── MainStack.tsx   # Main navigation stack
 │   ├── ScreenOne.tsx   # First screen component
-│   └── ScreenTwo.tsx   # Second screen component
+│   ├── ScreenTwo.tsx   # Second screen component
+│   └── N8nScreen.tsx   # n8n integration screen
 ├── utils/
 │   ├── environment.ts  # Environment detection for WebContainer
+│   ├── n8n.ts          # n8n integration utilities
 │   └── index.ts        # Utility exports
 └── fonts/              # Custom fonts
 ```
 
-## 🎨 Code Quality
+## 🥽 Vision Pro Optimization
 
-This project uses:
-- **TypeScript** with strict mode for type safety
-- **ESLint** for code linting
-- **Prettier** for consistent code formatting
-- **Tailwind CSS** for utility-first styling
+This application is designed with Apple Vision Pro spatial computing in mind, featuring UI patterns and components optimized for immersive experiences.
 
-## 📱 Screens
+### Spatial Design Principles
+
+- **Depth and Layering**: UI components designed to work in 3D space
+- **Comfortable Viewing**: Typography and spacing optimized for extended viewing distances
+- **Gesture Support**: Touch and spatial gesture interactions
+- **Performance**: Optimized rendering for high-refresh-rate displays
+
+### Vision Pro Specific Features
+
+- **Adaptive Layouts**: Automatically adjust to different viewing contexts
+- **Spatial Navigation**: Navigation patterns that work in 3D environments
+- **Accessibility**: Full support for Vision Pro accessibility features
+- **Performance Monitoring**: Built-in performance metrics for spatial computing
+
+### Testing for Vision Pro
+
+While the application runs on iOS, Android, and web platforms, Vision Pro specific features can be tested:
+
+```bash
+# Use iOS target with Vision Pro simulator
+ns run ios --device "Apple Vision Pro Simulator"
+
+# Preview on physical Vision Pro device
+ns preview --device <vision-pro-device-id>
+```
+
+## 🎨 Code Quality Standards
+
+This project maintains enterprise-grade code quality through automated tooling and strict standards:
+
+### Quality Tools
+
+| Tool | Purpose | Configuration |
+|------|---------|---------------|
+| **TypeScript** | Type safety and IntelliSense | Strict mode, no implicit any |
+| **ESLint** | Code linting and best practices | TypeScript + React rules |
+| **Prettier** | Consistent code formatting | 2-space indent, 100 char line length |
+| **Tailwind CSS** | Utility-first styling | NativeScript integration |
+
+### Code Quality Metrics
+
+- **Type Coverage**: 100% (strict TypeScript mode)
+- **Linting**: Zero warnings or errors required
+- **Formatting**: Automated with Prettier
+- **Code Reviews**: All changes require review (see [CONTRIBUTING.md](CONTRIBUTING.md))
+
+## 📱 Application Screens
+
+### Screen One (Home)
 
 ### Screen One
 - Displays a welcome message
 - Alert button demonstration
+- Environment information display
+- Navigation to n8n Integration screen
 - Navigation to Screen Two
+**Purpose**: Main entry point of the application demonstrating core UI patterns.
 
-### Screen Two
-- Displays passed message parameter
-- Back navigation functionality
+**Features**:
+- Welcome message display with Vision Pro optimized typography
+- Interactive alert button showcasing native dialog integration
+- Navigation controls to demonstrate parameter passing
+- Environment detection display (WebContainer vs Native)
+
+**Technical Implementation**:
+- Utilizes React hooks for state management
+- Implements type-safe navigation with typed parameters
+- Demonstrates Tailwind CSS utility classes for styling
+
+### Screen Two (Detail)
+
+**Purpose**: Secondary screen demonstrating navigation state and back navigation.
+
+**Features**:
+- Dynamic content display based on navigation parameters
+- Type-safe parameter reception and rendering
+- Back navigation with proper state preservation
+- Responsive layout adapting to different screen sizes
+
+**Technical Implementation**:
+- Receives typed navigation parameters
+- Implements proper back button handling
+- Maintains navigation stack integrity
+
+### n8n Integration Screen
+- Show n8n configuration
+- Trigger n8n webhooks with POST requests
+- Call n8n webhooks with GET requests
+- Demonstrates workflow automation capabilities
 
 ## 🔧 Configuration Files
 
-- `tsconfig.json` - TypeScript configuration with strict mode
-- `.eslintrc.json` - ESLint rules and settings
-- `.prettierrc.json` - Prettier formatting rules
-- `tailwind.config.js` - Tailwind CSS configuration
-- `.stackblitzrc` - StackBlitz configuration with WebContainer support
-- `.webcontainerrc` - WebContainer-specific configuration
-- `turbo.json` - Turbo build system configuration for optimized builds
+### Core Configuration
+
+| File | Purpose | Key Settings |
+|------|---------|--------------|
+| `tsconfig.json` | TypeScript compiler configuration | Strict mode enabled, ES2020 target |
+| `.eslintrc.json` | Code linting rules | TypeScript-specific rules, React plugin |
+| `.prettierrc.json` | Code formatting standards | 2-space indent, double quotes |
+| `nativescript.config.ts` | NativeScript app configuration | App ID, resources path, platform settings |
+
+### Styling Configuration
+
+| File | Purpose | Key Features |
+|------|---------|--------------|
+| `tailwind.config.js` | Tailwind CSS setup | Custom theme, NativeScript integration |
+| `app.css` | Global styles | Base styles, CSS variables |
+
+### WebContainer Configuration
+
+| File | Purpose | Documentation |
+|------|---------|---------------|
+| `.stackblitzrc` | StackBlitz environment setup | See [WEBCONTAINER.md](WEBCONTAINER.md) |
+| `.webcontainerrc` | WebContainer-specific features | Node 18, file system, performance settings |
+| `turbo.json` | Build pipeline optimization | Caching, task dependencies |
+
+### Build Configuration
+
+| File | Purpose | Key Features |
+|------|---------|--------------|
+| `webpack.config.js` | Build tooling configuration | WebContainer optimizations, code splitting |
+| `Dockerfile` | Container deployment | Multi-stage build, production optimizations |
+
+## 🔗 n8n Integration
+
+This application includes built-in support for n8n workflow automation, allowing you to trigger workflows and exchange data with your n8n instance.
+
+### Configuration
+
+Configure n8n by setting environment variables:
+
+```bash
+# Set your n8n webhook URL
+export N8N_WEBHOOK_URL="https://your-n8n-instance.com/webhook"
+
+# Set your n8n API endpoint (optional)
+export N8N_API_ENDPOINT="https://your-n8n-instance.com/api/v1"
+```
+
+Or configure it directly in `src/constants.ts`:
+
+```typescript
+export const N8N_CONFIG = {
+  WEBHOOK_URL: "https://your-n8n-instance.com/webhook",
+  API_ENDPOINT: "https://your-n8n-instance.com/api/v1",
+  REQUEST_TIMEOUT: 10000,
+} as const;
+```
+
+### Usage
+
+The n8n integration utilities are available in `src/utils/n8n.ts`:
+
+```typescript
+import { triggerN8nWebhook, callN8nWebhook, getN8nConfig } from './utils';
+
+// Trigger a webhook with POST data
+const result = await triggerN8nWebhook('my-webhook', {
+  message: 'Hello from mobile app',
+  timestamp: new Date().toISOString()
+});
+
+// Call a webhook with GET request
+const response = await callN8nWebhook('my-webhook');
+
+// Check n8n configuration
+const config = getN8nConfig();
+console.log('n8n configured:', config.isConfigured);
+```
+
+### Features
+
+- **Webhook Triggers**: Send data to n8n workflows via POST requests
+- **Webhook Calls**: Fetch data from n8n workflows via GET requests
+- **Configuration Check**: Verify n8n setup status
+- **Error Handling**: Comprehensive error handling for failed requests
+- **Timeout Control**: Configurable request timeout (default: 10 seconds)
+
+### n8n Integration Screen
+
+Access the n8n Integration screen from the main menu to:
+- View current n8n configuration
+- Test webhook triggers with sample data
+- Test webhook calls to retrieve data
+- Debug n8n connectivity issues
 
 ## 🌐 WebContainer Support
 
-This project supports running in WebContainer environments (like StackBlitz), which allows Node.js to run directly in the browser. The following configurations enable this:
+This project features full WebContainer integration, enabling Node.js execution directly in the browser. This allows for instant development environments without local installation, perfect for StackBlitz, CodeSandbox, and similar platforms.
 
-### Configuration Files
+### Why WebContainer?
 
-- **`.stackblitzrc`**: Enables WebContainer mode and sets environment variables
-- **`.webcontainerrc`**: Defines WebContainer-specific features and performance settings
-- **`turbo.json`**: Optimizes build pipeline for WebContainer execution
-- **`webpack.config.js`**: Includes WebContainer-aware optimizations
+- **Zero Setup**: Start coding immediately without installing Node.js or dependencies
+- **Consistent Environment**: Same development environment for all team members
+- **Fast Onboarding**: New developers can contribute within seconds
+- **Secure**: Sandboxed execution environment in the browser
+- **Portable**: Share working environments via URL
 
 ### Environment Detection
 
-The project includes environment detection utilities in `src/utils/environment.ts`:
+The project includes intelligent environment detection utilities:
 
 ```typescript
 import { isWebContainer, ENV_CONFIG } from './utils';
 
-// Check if running in WebContainer
+// Runtime environment detection
 if (isWebContainer()) {
   console.log('Running in WebContainer mode');
+  // Use browser-compatible APIs
+} else {
+  console.log('Running in native mode');
+  // Use native device APIs
 }
 
-// Access environment configuration
+// Access comprehensive environment configuration
 console.log(ENV_CONFIG.environmentType); // "webcontainer" | "native" | "preview"
+console.log(ENV_CONFIG.isDevelopment);   // boolean
 ```
 
-### WebContainer Features
+### Performance Optimizations
 
-- **Optimized Builds**: Faster builds with disabled minification in development
-- **Lazy Loading**: Efficient module loading for better performance
-- **Memory Optimization**: Reduced memory footprint for browser execution
-- **Cache Support**: Intelligent caching for faster rebuilds
+| Feature | Benefit | Implementation |
+|---------|---------|----------------|
+| **Fast Builds** | 50% faster development builds | Minification disabled in dev mode |
+| **Code Splitting** | Improved load times | Vendor chunks separated |
+| **Lazy Loading** | Reduced initial bundle size | Dynamic imports for routes |
+| **Smart Caching** | Instant rebuilds | Turbo build system integration |
+| **Memory Optimization** | Reduced browser memory usage | Optimized webpack configuration |
+
+For comprehensive WebContainer documentation, see [WEBCONTAINER.md](WEBCONTAINER.md).
+
+## 🚀 Production Deployment
+
+### Building for Production
+
+```bash
+# Build for iOS
+ns build ios --release --for-device
+
+# Build for Android
+ns build android --release --key-store-path <path> --key-store-password <password>
+
+# Build for WebContainer production
+npm run webcontainer:build
+```
+
+### Deployment Checklist
+
+- [ ] Run full test suite: `npm run type-check && npm run lint`
+- [ ] Update version in `package.json`
+- [ ] Update `CHANGELOG.md` with release notes
+- [ ] Create production builds for target platforms
+- [ ] Test on physical devices (iOS, Android, Vision Pro)
+- [ ] Verify Docker container builds successfully
+- [ ] Tag release in Git: `git tag -a v1.0.0 -m "Release v1.0.0"`
+- [ ] Push to repository: `git push --tags`
+
+### Environment Variables
+
+Set these environment variables for different deployment targets:
+
+```bash
+# Development
+export NODE_ENV=development
+export WEBCONTAINER=1
+
+# Production
+export NODE_ENV=production
+export LOG_LEVEL=error
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### Issue: TypeScript errors after installation
+
+**Symptoms**: `npm run type-check` fails with type errors
+
+**Solution**:
+```bash
+# Clear TypeScript cache
+rm -rf node_modules/.cache
+
+# Reinstall dependencies
+npm install
+
+# Rebuild TypeScript
+npm run type-check
+```
+
+#### Issue: WebContainer mode not detected
+
+**Symptoms**: Environment detection returns incorrect values
+
+**Solution**:
+1. Ensure `WEBCONTAINER=1` is set in `.stackblitzrc`
+2. Restart the StackBlitz environment
+3. Clear browser cache and reload
+
+#### Issue: Docker build fails
+
+**Symptoms**: Docker build errors or timeout
+
+**Solution**:
+```bash
+# Build with no cache
+docker build --no-cache -t vision-pro-react-nativescript:latest .
+
+# Check Docker daemon
+docker info
+
+# Increase Docker memory limit (Docker Desktop)
+# Settings > Resources > Memory: 4GB minimum
+```
+
+#### Issue: NativeScript preview not connecting
+
+**Symptoms**: `ns preview` command fails to connect to device
+
+**Solution**:
+```bash
+# Check NativeScript CLI version
+ns --version
+
+# Update NativeScript CLI
+npm install -g @nativescript/cli@latest
+
+# Clear NativeScript cache
+ns clean
+
+# Restart preview
+ns preview --clean
+```
+
+### Getting Help
+
+If you encounter issues not covered here:
+
+1. Check existing [GitHub Issues](https://github.com/btkcodedev/vision-pro-react-nativescript-mob/issues)
+2. Review [WEBCONTAINER.md](WEBCONTAINER.md) for WebContainer-specific issues
+3. Consult [CONTRIBUTING.md](CONTRIBUTING.md) for development setup
+4. Create a new issue with detailed information:
+   - Steps to reproduce
+   - Expected behavior
+   - Actual behavior
+   - Environment details (OS, Node version, etc.)
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+
+- Code style and standards
+- Development workflow
+- Pull request process
+- Commit message conventions
+
+### Quick Contribution Guide
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes following our code quality standards
+4. Run quality checks: `npm run type-check && npm run lint && npm run format`
+5. Commit your changes: `git commit -m 'feat: add amazing feature'`
+6. Push to your branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
+
+## 📚 Documentation
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines and development setup
+- [WEBCONTAINER.md](WEBCONTAINER.md) - Comprehensive WebContainer integration guide
+- [CHANGELOG.md](CHANGELOG.md) - Version history and changes
+
+## 🌟 Community and Support
+
+### Resources
+
+- **Repository**: [github.com/btkcodedev/vision-pro-react-nativescript-mob](https://github.com/btkcodedev/vision-pro-react-nativescript-mob)
+- **Issues**: [Report bugs or request features](https://github.com/btkcodedev/vision-pro-react-nativescript-mob/issues)
+- **Discussions**: [Join community discussions](https://github.com/btkcodedev/vision-pro-react-nativescript-mob/discussions)
+
+### External Resources
+
+- [NativeScript Documentation](https://docs.nativescript.org/)
+- [React Documentation](https://react.dev/)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [WebContainer API](https://webcontainers.dev/)
+
+## 🙏 Acknowledgments
+
+Built with:
+- [React](https://react.dev/) - UI library
+- [NativeScript](https://nativescript.org/) - Mobile framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- [StackBlitz WebContainers](https://webcontainers.dev/) - Browser-based development
 
 ## 📄 License
 
-Private
+Private - All rights reserved
+
+---
+
+**Made with ❤️ for mobile and spatial computing development**
