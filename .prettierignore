@@ -1,0 +1,7 @@
+node_modules
+platforms
+hooks
+dist
+build
+*.log
+package-lock.json
